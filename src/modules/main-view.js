@@ -14,6 +14,13 @@ function selectProject(project){
     mainContent.appendChild(projectTitle);
     mainContent.appendChild(toDoContainer);
     
+    //flushes any active projects
+    const projectList = document.querySelectorAll('.list-project');
+    projectList.forEach((item) => {
+        console.log(item);
+        item.classList.remove("active");
+    })
+    //Sets active class to current projects
     const projectinList = document.getElementById(project.getTitle());
     projectinList.classList.add('active');
 }
