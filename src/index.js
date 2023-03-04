@@ -1,4 +1,7 @@
-/* eslint-disable indent */
+/* eslint-disable quotes */
+import UI from "./modules/UI";
+
+/* eslint-disable */
 // To-do list app by Chucklebuckle
 
 // Brainstorm:
@@ -12,4 +15,5 @@
 // 2. Projects should be classes that to-dos get put into
     // - users should be able to move to-dos between projects
 
-console.log('test');
+document.addEventListener('DOMContentLoaded', UI.init)
+
