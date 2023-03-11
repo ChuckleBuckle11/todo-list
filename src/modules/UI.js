@@ -1,42 +1,61 @@
 /* eslint-disable */
-import { ProjectList, Project } from "./projects/Project";
+import { ProjectList, Project, Task } from "./projects/Project";
 import { selectProject } from "./main-view";
+import { initDOMEvents } from "./domEvents";
 
-
+// Sets the default projects 
 const projectList = new ProjectList();
-const defaultProject = new Project("Default Project", "Default Description","","","","");
-const project2 = new Project("Project 2", "Default Description","","","","");
+const defaultProject = new Project("Default Project", "Default Description");
+const defaultTask1 = new Task('Task1', '28/2/2023');
+const defaultTask2 = new Task('Task2', '28/2/2023');
+defaultProject.addTask(defaultTask1);
+defaultProject.addTask(defaultTask2);
+const project2 = new Project("Project 2", "Default Description");
+project2.addTask(defaultProject);
 const projectsListContainer = document.querySelector("#projects-list");
 
-
-
-
-function init(){
+function init() {
     projectList.addProject(defaultProject);
     projectList.addProject(project2);
-    updateProjectsList();
+    initProjectsList();
+    initDOMEvents();
     selectProject(defaultProject);
+    // createAddProjectView();
 
-    console.log(projectList.getProject('Project 2'))
-    
 }
 
-function updateProjectsList(){
+function initProjectsList() {
     const listofProjects = projectList.getProjectList();
     projectsListContainer.textContent = ""
 
-    listofProjects.forEach((project)=>{
+    listofProjects.forEach((project) => {
         const projectContainer = document.createElement('p');
-        projectContainer.classList.add("project");
+        projectContainer.classList.add("list-project");
         projectContainer.id = project.getTitle();
         projectContainer.textContent = project.getTitle();
 
         // onClick switch to Project
-        projectContainer.addEventListener('click',(e) => {
+        projectContainer.addEventListener('click', (e) => {
             selectProject(projectList.getProject(e.target.id))
         });
 
+        // creates edit and delete buttons in projects list
+        const listButtonContainer = document.createElement('div');
+        listButtonContainer.classList.add('list-buttons')
+        projectContainer.appendChild(listButtonContainer);
+
+        const editButton = document.createElement(`i`);
+        editButton.classList.add(`fa-solid`, `fa-pen-to-square`, `edit-button`);
+        const deleteButton = document.createElement(`i`);
+        deleteButton.classList.add(`fa-solid`, `fa-trash-can`, `delete-button`);
+
+        listButtonContainer.appendChild(editButton);
+        listButtonContainer.appendChild(deleteButton);
         projectsListContainer.appendChild(projectContainer);
     })
+    
 }
-export default {init}
+
+
+
+export default { init }

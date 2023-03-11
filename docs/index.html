@@ -9,6 +9,8 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/sidebar.css">
+  <link rel="stylesheet" href="./styles/main-content.css">
+  <link rel="stylesheet" href="./styles/add-project-view.css">
   <script src="https://kit.fontawesome.com/2e1cd133ad.js" crossorigin="anonymous" defer></script>
 <!-- Scripts -->
   <script src="main.js" defer></script>
@@ -30,7 +32,7 @@
         <div id="projects-header">
           <p>Projects</p>
           <i class="fa-solid fa-plus add-project-button tooltip">
-            <span class="tooltiptext">Add new project</span>
+            <span class="tooltiptext">Add a new project</span>
           </i>
         </div>
         <div id="projects-list"></div>
@@ -44,7 +46,22 @@
   </main>
   <footer>
     <p>ChuckleBuckle @ 2023</p>
+      <a href = "https://github.com/ChuckleBuckle11" target="_blank" id="github"><i class="fa-brands fa-github"></i></a>
+      <a href = "https://www.linkedin.com/in/dylan-lau/" target="_blank" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
   </footer>
+  <div id="add-project-view-container">
+    <div id="add-project-viewbox">
+      <div id="add-project-form-container">
+        <form form="add-project-form">
+          <input type="text" id="title" name="project-title" placeholder="Enter title..."/>
+        </form>
+      </div>
+      <div id="form-buttons-container">
+        <button onclick="" id="add-project-cancel-button">Cancel</button>
+        <button id="add-project-submit-button">Submit</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

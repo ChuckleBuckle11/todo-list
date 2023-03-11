@@ -33,6 +33,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 5px 20px;
+    color: var(--header-color);
     
   }
 
@@ -106,25 +107,44 @@
   }
 
 
-  .project{
+  .list-project{
     background-color: var(--sidebar-color);
     font-size: 14px;
     color: var(--project-title-color);
     padding: 10px 10px;
     
     height: auto;
+    display: flex;
+    justify-content: space-between;
   }
 
-  .project:hover{
-    box-shadow: 0px 0px 0px 1px var(--header-color);
+  .list-project:hover{
+    box-shadow: 0px 0px 0px 1px rgb(163, 163, 163);
     transition: box-shadow 0.2s linear;
     margin: 0.01em;
   }
 
-  .project.active{
+  .list-project.active{
     background-color: rgb(242, 242, 242);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
 
+  /* Edit Delete Buttons */
+  .list-buttons{
+    display: flex;
+    gap: 1em;
+  }
 
+  .list-buttons > i:hover{
+    transform:scale(1.2);
+    transition: transform 0.1s ease-out;
+  }
+
+  .list-buttons > .edit-button:hover{
+    color: rgb(11, 173, 54);
+  }
+  .list-buttons > .delete-button:hover{
+    color: rgb(197, 0, 0);
+  }
 
   

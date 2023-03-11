@@ -2,6 +2,7 @@
   --header-color: #333;
   --default-font: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   --project-title-color: #747373;
+  --main-white:white;
 }
   
   *{
@@ -66,6 +67,8 @@
     color: #333;
   }
   
+
+  /* FOOTER */
   footer {
     flex: 0.05;
     background-color: #333;
@@ -73,6 +76,11 @@
     text-align: center;
     padding: 10px;
   }
+
+  footer> a {
+    color:white;
+    text-decoration: none; 
+}
   
 
 

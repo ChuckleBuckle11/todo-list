@@ -10,7 +10,6 @@ function createSideBar(){
 
 
 function addToProjectList(project){
-    console.log(project.getTitle())
     const projectContainer = document.createElement('p');
     projectContainer.classList.add("project");
     projectContainer.id = `${project.getTitle()}`;

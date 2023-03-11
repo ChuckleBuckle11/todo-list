@@ -1,0 +1,108 @@
+#add-project-view-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.403);
+    display: none;
+
+    text-align: center;
+}
+
+#add-project-view-container.active {
+    display: block;
+}
+
+#add-project-viewbox {
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+
+
+    /* make the top edge of .inner appear in the vertical center of .outer */
+    top: 50%;
+    left: 25%;
+
+    /* move .inner up by half of its height so that its middle is in the middle of .outer */
+    transform: translateY(-50%);
+
+    width: 50%;
+    background: white;
+    background-color: var(--main-white);
+
+    display: flex;
+    flex-direction: column;
+}
+
+#add-project-form-container{
+    background-color: none;
+    font-family: var(--default-font);
+    font-size: 25px;
+    padding: 1%;
+
+}
+
+#form-buttons-container{
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    padding: 2% 2%;
+}
+
+
+
+
+/* CSS */
+#add-project-submit-button, #add-project-cancel-button{
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: var(--header-color);
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+#add-project-submit-button:hover{
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+#add-project-cancel-button:hover {
+    background-color: rgb(187, 2, 2);
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+  }
+  
+
+#add-project-submit-button:active, #add-project-cancel-button:active{
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+#add-project-submit-button:hover, #add-project-cancel-button:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}

@@ -1,0 +1,52 @@
+#main-content{
+    padding: 25px;
+
+    
+
+    
+}
+#main-content > *{
+    animation: fadeIn 1s;
+}
+
+#to-do-container{
+    display: flex;
+    flex-direction: column;
+}
+.to-do{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-task-container{
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+
+    display:flex;
+    gap: 10px;
+}
+
+.to-do:hover, .add-task-container:hover{
+    background-color: rgb(243, 243, 243);
+    transition: 0.4s;
+}
+
+
+.add-task-container > i{
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }

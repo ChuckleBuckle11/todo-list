@@ -18,20 +18,21 @@ class ProjectList{
 }
 
 class Task{
-    constructor(title,dueDate){
+    constructor(title,dueDate,priority=null, notes=null, checklist=null){
         this.title = title;
         this.dueDate = dueDate;
+        this.priority = priority;
+        this.notes = notes;
+        this.checklist = checklist;
     }
+    setTitle(title){this.title = title};
+    getTitle(){return this.title};
 }
 
 class Project{
     constructor(title, desc, dueDate=null, priority=null, notes=null, checklist=null){
         this.title = title;
         this.desc = desc;
-        this.dueDate = dueDate;
-        this.priority = priority;
-        this.notes = notes;
-        this.checklist = checklist;
         this.taskList = [];
     }
 
@@ -40,7 +41,7 @@ class Project{
     setDesc(desc){this.desc = desc};
     getDesc(){return this.desc};
     getTasks(){return this.taskList};
-    addTask(task){taskList.push(task)};
+    addTask(task){this.taskList.push(task)};
 
 }
 

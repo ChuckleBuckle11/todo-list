@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Gloock
+- Font Author: Copyright 2022 The Gloock Project Authors (https://github.com/duartp/gloock)
+- Font Source: http://fonts.gstatic.com/s/gloock/v1/Iurb6YFw84WUY4N5jxylBrdRjQ.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
