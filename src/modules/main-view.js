@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { showTaskView, hideTaskView } from "./UI";
 const mainContent = document.querySelector(`#main-content`);
 
 function selectProject(project){
@@ -67,6 +68,7 @@ function loadToDos(project){
 function addAddTaskButton(){
     const addTaskContainer = document.createElement('div');
     addTaskContainer.classList.add('add-task-container');
+   
 
     const icon = document.createElement('i');
     icon.classList.add('fa-solid','fa-plus','add-task-icon');
@@ -78,6 +80,10 @@ function addAddTaskButton(){
     addTaskContainer.appendChild(icon);
     addTaskContainer.appendChild(addTaskText);
     mainContent.appendChild(addTaskContainer);
+
+    // If container is clicked, open the Add Task Viewbox
+    console.log('asdf')
+    addTaskContainer.addEventListener('click', showTaskView)
 }
 export {selectProject}
 

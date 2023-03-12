@@ -1,4 +1,4 @@
-#add-project-view-container {
+#add-task-view-container {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -8,11 +8,11 @@
     text-align: center;
 }
 
-#add-project-view-container.active {
+#add-task-view-container.active {
     display: block;
 }
 
-#add-project-viewbox {
+#add-task-viewbox {
     border-radius: 20px;
     position: absolute;
     left: 0;
@@ -34,7 +34,7 @@
     flex-direction: column;
 }
 
-#add-project-form-container{
+#add-task-form-container{
     background-color: none;
     font-family: var(--default-font);
     font-size: 25px;
@@ -66,7 +66,7 @@ input#title{
 
 
 /* CSS */
-#add-project-submit-button, #add-project-cancel-button{
+#add-task-submit-button, #add-task-cancel-button{
   appearance: none;
   backface-visibility: hidden;
   background-color: var(--header-color);
@@ -96,14 +96,14 @@ input#title{
   white-space: nowrap;
 }
 
-#add-project-submit-button:hover{
+#add-task-submit-button:hover{
   background-color: #1e8449;
   opacity: 1;
   transform: translateY(0);
   transition-duration: .35s;
 }
 
-#add-project-cancel-button:hover {
+#add-task-cancel-button:hover {
     background-color: rgb(187, 2, 2);
     opacity: 1;
     transform: translateY(0);
@@ -111,11 +111,11 @@ input#title{
   }
   
 
-#add-project-submit-button:active, #add-project-cancel-button:active{
+#add-task-submit-button:active, #add-task-cancel-button:active{
   transform: translateY(2px);
   transition-duration: .35s;
 }
 
-#add-project-submit-button:hover, #add-project-cancel-button:hover {
+#add-task-submit-button:hover, #add-task-cancel-button:hover {
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }

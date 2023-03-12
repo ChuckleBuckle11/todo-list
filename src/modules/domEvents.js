@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+import {showProjectView, hideProjectView, hideTaskView} from "./UI"
 function initDOMEvents(){
     // handles Add Project Button onclick functions
     const addProjectButton = document.querySelector(`.add-project-button`);
@@ -8,17 +8,11 @@ function initDOMEvents(){
     const cancelAddProjectButton = document.querySelector(`#add-project-cancel-button`);
     console.log(cancelAddProjectButton)
     cancelAddProjectButton.addEventListener('click',hideProjectView);
-}
 
-
-function showProjectView() {
-    const addProjectViewContainer = document.querySelector(`#add-project-view-container`);
-    addProjectViewContainer.classList.add('active');
-}
-
-function hideProjectView() {
-    const addProjectViewContainer = document.querySelector(`#add-project-view-container`);
-    addProjectViewContainer.classList.remove('active');
+    // handles hiding Add Task View onclick functions    
+    const cancelAddTaskButton = document.querySelector(`#add-task-cancel-button`);
+    console.log(cancelAddTaskButton)
+    cancelAddTaskButton.addEventListener('click',hideTaskView);
 }
 
 export {initDOMEvents};

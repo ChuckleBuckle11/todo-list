@@ -56,6 +56,31 @@ function initProjectsList() {
     
 }
 
+function showProjectView() {
+    const addProjectViewContainer = document.querySelector(`#add-project-view-container`);
+    addProjectViewContainer.classList.add('active');
+}
 
+function hideProjectView() {
+    const addProjectViewContainer = document.querySelector(`#add-project-view-container`);
+    addProjectViewContainer.classList.remove('active');
+}
 
-export default { init }
+function showTaskView() {
+    console.log('show')
+    const addTaskViewContainer = document.querySelector(`#add-task-view-container`);
+    addTaskViewContainer.classList.add('active');
+}
+
+function hideTaskView() {
+    const addTaskViewContainer = document.querySelector(`#add-task-view-container`);
+    addTaskViewContainer.classList.remove('active');
+}
+
+export { 
+    init,
+    showProjectView,
+    hideProjectView,
+    showTaskView,
+    hideTaskView,
+}

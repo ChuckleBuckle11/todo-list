@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./styles/sidebar.css">
   <link rel="stylesheet" href="./styles/main-content.css">
   <link rel="stylesheet" href="./styles/add-project-view.css">
+  <link rel="stylesheet" href="./styles/add-task-view.css">
   <script src="https://kit.fontawesome.com/2e1cd133ad.js" crossorigin="anonymous" defer></script>
 <!-- Scripts -->
   <script src="main.js" defer></script>
@@ -53,12 +54,26 @@
     <div id="add-project-viewbox">
       <div id="add-project-form-container">
         <form form="add-project-form">
-          <input type="text" id="title" name="project-title" placeholder="Enter title..."/>
+          <input type="text" id="title" name="project-title" placeholder="Enter project title..."/>
         </form>
       </div>
       <div id="form-buttons-container">
         <button onclick="" id="add-project-cancel-button">Cancel</button>
-        <button id="add-project-submit-button">Submit</button>
+        <button id="add-project-submit-button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="add-task-view-container">
+    <div id="add-task-viewbox">
+      <div id="add-task-form-container">
+        <form form="add-task-form">
+          <input type="text" id="task-title" name="task-title" placeholder="Enter task name..."/>
+        </form>
+      </div>
+      <div id="form-buttons-container">
+        <button onclick="" id="add-task-cancel-button">Cancel</button>
+        <button id="add-task-submit-button">Done</button>
       </div>
     </div>
   </div>
