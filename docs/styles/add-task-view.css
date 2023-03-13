@@ -43,7 +43,7 @@
 }
 
 
-#title{
+#task-title{
   width: 80%;
   padding: 5px 10px;
 
@@ -57,7 +57,7 @@
     padding: 2% 2%;
 }
 
-input#title{
+input#task-title{
   font-family: var(--default-font);
   padding: 1% 3%;
 }

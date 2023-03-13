@@ -5,12 +5,21 @@ class ProjectList{
         this.projectList = [];
     }
 
-    addProject(project){this.projectList.push(project)};
     getProjectList(){return this.projectList};
     getProject(str){
         for (let project of this.projectList){
             if (project.title == str){
                 return project;
+            }
+        }
+        return null;
+    }
+    addProject(project){this.projectList.push(project)};
+    removeProject(str){
+        for (let project of this.projectList){
+            console.log(project.title);
+            if (project.title == str){
+                this.projectList.splice(this.projectList.indexOf(project),1);
             }
         }
         return null;

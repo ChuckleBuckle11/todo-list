@@ -14,6 +14,8 @@ const project2 = new Project("Project 2", "Default Description");
 project2.addTask(defaultProject);
 const projectsListContainer = document.querySelector("#projects-list");
 
+
+
 function init() {
     projectList.addProject(defaultProject);
     projectList.addProject(project2);

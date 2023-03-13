@@ -10,13 +10,13 @@ function selectProject(project){
     projectTitle.id = "project-title"
     projectTitle.textContent = project.getTitle();
 
-    const toDoContainer = document.createElement('div')
-    toDoContainer.id = `to-do-container`;
+    
 
     mainContent.appendChild(projectTitle);
-    mainContent.appendChild(toDoContainer);
+    
 
     // Load to-dos on the main page
+    
     loadToDos(project);
     addAddTaskButton();
     selectSideBarActive(project);
@@ -38,8 +38,16 @@ projectinList.classList.add('active');
 }
 
 // Loads the to-dos in the main page
+
 function loadToDos(project){
-    const toDoContainer = document.querySelector(`#to-do-container`);
+    // creates table header first
+    createToDoHeader();
+
+
+    const toDoContainer = document.createElement('div')
+    toDoContainer.id = `to-do-container`;
+    mainContent.appendChild(toDoContainer);
+
     let i = 0;
     for (let task of project.getTasks()){
         // toDo container
@@ -64,6 +72,23 @@ function loadToDos(project){
     }
 }
 
+function createToDoHeader(){
+    const toDoHeader = document.createElement(`div`);
+    toDoHeader.id = "to-do-header";
+    mainContent.appendChild(toDoHeader);
+
+    const toDoHeaderTitle = document.createElement(`span`);
+    toDoHeaderTitle.id = "to-do-header-title";
+    toDoHeaderTitle.textContent = "Title";
+
+    const toDoHeaderDueDate = document.createElement(`span`);
+    toDoHeaderDueDate.id = "to-do-header-duedate";
+    toDoHeaderDueDate.textContent = "Due Date";
+
+    toDoHeader.appendChild(toDoHeaderTitle);
+    toDoHeader.appendChild(toDoHeaderDueDate);
+
+}
 
 function addAddTaskButton(){
     const addTaskContainer = document.createElement('div');
@@ -82,7 +107,6 @@ function addAddTaskButton(){
     mainContent.appendChild(addTaskContainer);
 
     // If container is clicked, open the Add Task Viewbox
-    console.log('asdf')
     addTaskContainer.addEventListener('click', showTaskView)
 }
 export {selectProject}

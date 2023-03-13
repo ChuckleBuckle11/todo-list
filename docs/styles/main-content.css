@@ -1,34 +1,79 @@
 #main-content{
     padding: 25px;
-
-    
-
-    
+   
+    --table-padding: 15px 20px;
+    --table-border: 1px solid rgba(0,0,0,.15);
+    --table-item-padding-left: 3%;
 }
 #main-content > *{
     animation: fadeIn 1s;
 }
 
+/* TODO HEADER */
+#to-do-header{
+    display: grid;
+    grid-template-columns: 25px 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0 20px;
+    border-bottom: var(--table-border);
+}
+
+#to-do-header>span{
+    padding: 15px 0;
+    /* border-left: var(--table-border); */
+    padding-left: var(--table-item-padding-left); 
+    border-left-width: 50%;
+
+    position: relative;
+}
+
+#to-do-header>span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    border-left: var(--table-border); /* change this color and thickness as needed */
+    
+    transform: translateY(25px);
+}
+
+#to-do-header-title{
+    grid-column: 2/3;
+}
+
+
+
+/* TODO BODY */
 #to-do-container{
     display: flex;
     flex-direction: column;
 }
 .to-do{
     background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-bottom: var(--table-border);
 
-    padding: 15px 20px;
+    padding: var(--table-padding);
 
-    display: flex;
+    /* display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; */
+
+    display: grid;
+    grid-template-columns: 25px 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.to-do-title{
+    padding-left: var(--table-item-padding-left);
 }
 
 .add-task-container{
     align-items: center;
-    padding: 10px 20px;
+    padding: var(--table-padding);
     cursor: pointer;
-    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-bottom: var(--table-border);
 
     display:flex;
     gap: 10px;
