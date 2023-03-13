@@ -1,7 +1,7 @@
 # To-do List (Still WIP)
 A to-do list app from The Odin Project
 
-Check it out live [here!](https://chucklebuckle11.github.io/todo-list/)
+[Check it out live here!](https://chucklebuckle11.github.io/todo-list/)
 
 ![Screenshot](/docs/img/screenshot.png)
 ## Upcoming features
