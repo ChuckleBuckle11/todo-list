@@ -6,15 +6,13 @@ import { initDOMEvents } from "./domEvents";
 // Sets the default projects 
 const projectList = new ProjectList();
 const defaultProject = new Project("Default Project", "Default Description");
-const defaultTask1 = new Task('Task1', '28/2/2023');
-const defaultTask2 = new Task('Task2', '28/2/2023');
+const defaultTask1 = new Task('Task 1', '28/2/2023');
+const defaultTask2 = new Task('Task 2', '28/2/2023');
 defaultProject.addTask(defaultTask1);
 defaultProject.addTask(defaultTask2);
 const project2 = new Project("Project 2", "Default Description");
 project2.addTask(defaultProject);
 const projectsListContainer = document.querySelector("#projects-list");
-
-
 
 function init() {
     projectList.addProject(defaultProject);
@@ -79,10 +77,15 @@ function hideTaskView() {
     addTaskViewContainer.classList.remove('active');
 }
 
+function getProjectList(){
+    return projectList;
+}
+
 export { 
     init,
     showProjectView,
     hideProjectView,
     showTaskView,
     hideTaskView,
+    getProjectList,
 }

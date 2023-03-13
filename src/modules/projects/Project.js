@@ -27,12 +27,13 @@ class ProjectList{
 }
 
 class Task{
-    constructor(title,dueDate,priority=null, notes=null, checklist=null){
+    constructor(title,dueDate,priority=null, notes=null, checklist=null, completed = false){
         this.title = title;
         this.dueDate = dueDate;
         this.priority = priority;
         this.notes = notes;
         this.checklist = checklist;
+        this.completed = completed;
     }
     setTitle(title){this.title = title};
     getTitle(){return this.title};

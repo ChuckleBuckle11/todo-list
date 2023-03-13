@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { showTaskView, hideTaskView } from "./UI";
+import { showTaskView, hideTaskView, getProjectList } from "./UI";
 const mainContent = document.querySelector(`#main-content`);
 
 function selectProject(project){
@@ -30,11 +30,11 @@ function selectSideBarActive(project){
 //flushes any active projects
 const projectList = document.querySelectorAll('.list-project');
 projectList.forEach((item) => {
-    item.classList.remove("active");
+    item.classList.remove("active-project");
 })
 //Sets active class to current projects
 const projectinList = document.getElementById(project.getTitle());
-projectinList.classList.add('active');
+projectinList.classList.add('active-project');
 }
 
 // Loads the to-dos in the main page
@@ -57,11 +57,13 @@ function loadToDos(project){
 
         //completeButton
         const completeButton = document.createElement('i');
-        completeButton.classList.add(`fa-regular`,`fa-circle-check`, `task-complete-button`);
-
+        completeButton.classList.add(`fa-regular`,`fa-circle`, `task-complete-button`);
+        completeButton.addEventListener('click', markTaskComplete);
+        completeButton.setAttribute('data-index',i);
         // toDO text
         const toDoTitle = document.createElement('span');
         toDoTitle.classList.add('to-do-title');
+        toDoTitle.id = `to-do-title-${i}`
         toDoTitle.textContent = task.getTitle();
       
         toDo.appendChild(completeButton);
@@ -85,8 +87,13 @@ function createToDoHeader(){
     toDoHeaderDueDate.id = "to-do-header-duedate";
     toDoHeaderDueDate.textContent = "Due Date";
 
+    const toDoHeaderPriority = document.createElement(`span`);
+    toDoHeaderPriority.id = "to-do-header-priority";
+    toDoHeaderPriority.textContent = "Priority";
+
     toDoHeader.appendChild(toDoHeaderTitle);
     toDoHeader.appendChild(toDoHeaderDueDate);
+    toDoHeader.appendChild(toDoHeaderPriority);
 
 }
 
@@ -108,6 +115,17 @@ function addAddTaskButton(){
 
     // If container is clicked, open the Add Task Viewbox
     addTaskContainer.addEventListener('click', showTaskView)
+}
+
+function markTaskComplete(event){
+    const button = event.target;
+
+    const buttonDataIndex = button.getAttribute("data-index");
+    const toDoTitle = document.querySelector(`#to-do-title-${buttonDataIndex}`);
+    toDoTitle.classList.add('complete')
+    
+    button.classList.remove('fa-circle');
+    button.classList.add('fa-circle-check')
 }
 export {selectProject}
 
